@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Учимся побеждать — Мария Громова · школьные проекты</title>
+<meta name="description" content="От «нам задали проект» — до защиты, баллов и первых побед. Наставник по школьным проектам Мария Громова.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Учимся побеждать — школьные проекты, которые пригодятся при поступлении">
+<meta property="og:description" content="Маршрут от «нам задали проект» до защиты, портфолио и дополнительных баллов.">
+<meta property="og:url" content="https://juliegordeeva.github.io/Gromova/">
+<meta property="og:image" content="https://juliegordeeva.github.io/Gromova/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF8F1; --paper-2:#F4EFE3; --card:#FFFFFF;
+  --grid:rgba(62,108,184,.11);
+  --ink:#14204A; --ink-2:#48527C; --ink-3:#7A82A3;
+  --red:#D8342B; --red-soft:#F7D9D5;
+  --hl:#FFE45C; --sky:#1C9BC2; --line:#E3DCCB;
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Golos Text","Segoe UI",system-ui,-apple-system,sans-serif;
+  --hand:"Caveat","Comic Sans MS","Segoe Print",cursive;
+  --gutter:clamp(16px,4vw,48px);
+  --margin-x:clamp(0px,calc((100vw - 1180px)/2 - 28px),200px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{
+  margin:0;color:var(--ink);font:400 17px/1.6 var(--body);
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:26px 26px;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+/* красная линия полей, как в тетради */
+body::before{
+  content:"";position:fixed;top:0;bottom:0;left:max(10px,var(--margin-x));
+  width:2px;background:var(--red);opacity:.55;z-index:0;pointer-events:none;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+::selection{background:var(--hl)}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:6px}
+
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding-inline:var(--gutter)}
+.section{padding-block:clamp(64px,9vw,120px);position:relative}
+[id]{scroll-margin-top:80px}
+
+/* шапка */
+.top{
+  position:sticky;top:0;z-index:4;
+  background:rgba(251,248,241,.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:64px}
+.brand{font:700 15px/1.1 var(--display);text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+.brand span{color:var(--red)}
+.nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.nav a{font:500 14px/1 var(--body);text-decoration:none;padding:9px 11px;border-radius:999px;color:var(--ink-2)}
+.nav a:hover{background:var(--paper-2);color:var(--ink)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font:600 15px/1 var(--body);text-decoration:none;cursor:pointer;
+  padding:15px 22px;border-radius:14px;border:2px solid var(--ink);
+  background:var(--ink);color:#fff;transition:transform .15s ease, box-shadow .15s ease, background .15s;
+  box-shadow:4px 4px 0 var(--red);min-height:48px;
+}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--red)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--red)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:none}
+.btn.ghost:hover{background:var(--card);box-shadow:4px 4px 0 var(--ink)}
+.btn.small{padding:10px 14px;min-height:40px;font-size:14px;box-shadow:3px 3px 0 var(--red)}
+.top .btn{margin-left:8px}
+@media (max-width:900px){ .nav{display:none} .top .btn{margin-left:auto} }
+
+/* типографика */
+.kicker{font:600 13px/1.2 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:26px;height:2px;background:var(--red)}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.02em;margin:0;line-height:1.08}
+h1{font-size:clamp(34px,5.6vw,68px);font-weight:800}
+h2{font-size:clamp(28px,4vw,48px);font-weight:700;max-width:18ch}
+h3{font-size:clamp(18px,1.8vw,21px);font-weight:700;line-height:1.25}
+.lede{font-size:clamp(17px,1.6vw,20px);color:var(--ink-2);max-width:56ch}
+.hand{font-family:var(--hand);color:var(--red);font-weight:700;line-height:1}
+.mark{background:linear-gradient(transparent 58%,var(--hl) 58%, var(--hl) 92%,transparent 92%);padding:0 .08em}
+.sec-head{display:grid;gap:18px;margin-bottom:clamp(32px,5vw,56px)}
+.sec-head p{margin:0}
+
+/* обведено красной ручкой */
+.circled{position:relative;white-space:nowrap;display:inline-block}
+.circled svg{position:absolute;left:-6%;top:-18%;width:112%;height:136%;overflow:visible;pointer-events:none}
+.circled path{fill:none;stroke:var(--red);stroke-width:3.2;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:0}
+.js .circled path{stroke-dashoffset:900;animation:draw 1.3s .7s cubic-bezier(.6,.1,.3,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* HERO */
+.hero{padding-block:clamp(40px,7vw,96px) clamp(48px,7vw,88px)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .85fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{margin:22px 0 26px}
+.hero .strike{color:var(--ink-3);font-weight:700}
+.hero h1{font-size:clamp(34px,4.6vw,58px)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.hero-note{margin-top:26px;font-size:15px;color:var(--ink-2);display:flex;gap:10px;align-items:flex-start;max-width:52ch}
+.hero-note .hand{font-size:28px;flex:none;transform:rotate(-8deg)}
+
+.polaroid{
+  position:relative;background:var(--card);padding:14px 14px 58px;border-radius:4px;
+  box-shadow:0 1px 0 var(--line),0 22px 50px -18px rgba(20,32,74,.35);
+  transform:rotate(2.2deg);max-width:420px;justify-self:center;
+}
+.polaroid img{aspect-ratio:673/800;object-fit:cover;width:100%;border-radius:2px}
+.polaroid figcaption{position:absolute;left:0;right:0;bottom:12px;text-align:center;font:700 30px/1 var(--hand);color:var(--ink)}
+.tape{position:absolute;width:110px;height:30px;background:rgba(255,228,92,.72);top:-14px;left:50%;transform:translateX(-50%) rotate(-4deg);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.sticker{
+  position:absolute;right:-18px;top:34%;background:var(--red);color:#fff;border-radius:50%;
+  width:112px;height:112px;display:grid;place-items:center;text-align:center;
+  font:700 13px/1.15 var(--body);transform:rotate(12deg);box-shadow:0 10px 24px -8px rgba(216,52,43,.6);padding:10px
+}
+.sticker b{display:block;font:800 21px/1 var(--display);white-space:nowrap;margin-bottom:3px}
+.hero-grid > *{min-width:0}
+@media (max-width:400px){ .hero h1{font-size:27px} }
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .polaroid{max-width:340px;margin-top:8px}
+  .sticker{right:-6px;width:96px;height:96px}
+}
+
+/* оценки-цифры */
+.grades{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:clamp(48px,7vw,80px);background:var(--card);border:2px solid var(--ink);border-radius:18px;overflow:hidden}
+.grade{padding:24px 22px;border-right:1px dashed var(--line);position:relative}
+.grade:last-child{border-right:0}
+.grade .num{font:800 clamp(30px,3.6vw,44px)/1 var(--display);letter-spacing:-.03em}
+.grade .num em{font-style:normal;color:var(--red)}
+.grade p{margin:10px 0 0;font-size:14.5px;line-height:1.45;color:var(--ink-2)}
+@media (max-width:900px){ .grades{grid-template-columns:1fr 1fr} .grade:nth-child(2){border-right:0} .grade:nth-child(-n+2){border-bottom:1px dashed var(--line)} }
+@media (max-width:460px){ .grades{grid-template-columns:1fr} .grade{border-right:0;border-bottom:1px dashed var(--line)} .grade:last-child{border-bottom:0} }
+
+/* ЗНАКОМО */
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,32px)}
+.pain{
+  background:#FFF6C9;padding:28px 24px 26px;border-radius:3px;position:relative;
+  box-shadow:0 18px 30px -20px rgba(20,32,74,.45);font-size:18px;line-height:1.45;
+}
+.pain:nth-child(1){transform:rotate(-1.6deg)}
+.pain:nth-child(2){transform:rotate(1.2deg);background:#E6F3F8}
+.pain:nth-child(3){transform:rotate(-.6deg);background:#FBE4E0}
+.pain q{font-weight:600;quotes:"«" "»"}
+.pain small{display:block;margin-top:14px;color:var(--ink-2);font-size:14px}
+.pain::before{content:"";position:absolute;top:-10px;left:28px;width:70px;height:22px;background:rgba(255,255,255,.6);transform:rotate(-6deg)}
+.answer{margin-top:clamp(40px,6vw,64px);display:flex;flex-wrap:wrap;gap:12px 22px;align-items:baseline}
+.answer .hand{font-size:clamp(34px,5vw,54px)}
+.answer p{margin:0;font:700 clamp(20px,2.4vw,28px)/1.25 var(--display);max-width:26ch}
+@media (max-width:820px){ .pains{grid-template-columns:1fr} .pain{transform:none!important} }
+
+/* МАРШРУТ */
+.route{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;counter-reset:st}
+.route::before{content:"";position:absolute;left:3%;right:3%;top:27px;border-top:3px dashed var(--ink);opacity:.35}
+.route li{position:relative;padding:0 14px 0 0}
+.route .dot{
+  width:56px;height:56px;border-radius:50%;background:var(--card);border:2px solid var(--ink);
+  display:grid;place-items:center;font:800 18px/1 var(--display);position:relative;z-index:1;
+  transition:background .2s,color .2s,transform .2s;
+}
+.route li:hover .dot{background:var(--ink);color:#fff;transform:scale(1.06)}
+.route li:last-child .dot{background:var(--red);border-color:var(--red);color:#fff}
+.route h3{margin:18px 0 8px;font-size:16px}
+.route p{margin:0;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+@media (max-width:1000px){
+  .route{grid-template-columns:1fr;gap:26px}
+  .route::before{left:27px;right:auto;top:10px;bottom:10px;border-top:0;border-left:3px dashed var(--ink)}
+  .route li{display:grid;grid-template-columns:56px 1fr;gap:4px 18px;padding:0}
+  .route .dot{grid-row:span 2}
+  .route h3{margin:6px 0 0}
+}
+
+/* КУДА ВЕДЁТ */
+.leads{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 22px;position:relative;overflow:hidden}
+.lead .big{font:800 clamp(28px,3vw,38px)/1 var(--display);color:var(--ink);letter-spacing:-.03em}
+.lead h3{margin:14px 0 8px;font-size:16px}
+.lead p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.lead::after{content:"";position:absolute;right:-30px;bottom:-30px;width:90px;height:90px;border-radius:50%;background:var(--red-soft)}
+.fine{font-size:13.5px;color:var(--ink-3);margin-top:18px;max-width:80ch}
+@media (max-width:1000px){ .leads{grid-template-columns:1fr 1fr} }
+@media (max-width:520px){ .leads{grid-template-columns:1fr} }
+
+/* ИСТОРИИ */
+.dark{background:var(--ink);color:#EEF1FA;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:26px 26px}
+.dark .kicker{color:var(--hl)} .dark .kicker::before{background:var(--hl)}
+.dark .lede{color:#B9C0DB}
+.stories{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.story{background:#1C2A5C;border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:clamp(24px,3vw,34px);position:relative}
+.story .tag{font:600 12.5px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:#9BA6CF}
+.story h3{margin:12px 0 18px;font-size:clamp(20px,2.2vw,25px);color:#fff}
+.story ol{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.story li{display:grid;grid-template-columns:78px 1fr;gap:12px;font-size:15.5px;line-height:1.5;color:#D5DAEE}
+.story li b{font:600 12px/1.9 var(--body);letter-spacing:.06em;text-transform:uppercase;color:#8C97C4}
+.story li:last-child b{color:var(--hl)}
+.story .result{position:absolute;right:18px;top:-16px;background:var(--hl);color:var(--ink);font:700 22px/1 var(--hand);padding:8px 14px;border-radius:10px;transform:rotate(4deg);box-shadow:0 8px 18px -8px rgba(0,0,0,.5)}
+.story blockquote{margin:18px 0 0;padding:14px 16px;border-left:3px solid var(--hl);background:rgba(255,255,255,.05);border-radius:0 12px 12px 0;font-size:15px;color:#EEF1FA}
+@media (max-width:860px){ .stories{grid-template-columns:1fr} .story li{grid-template-columns:1fr;gap:2px} }
+
+.stripe{margin-top:22px;display:grid;grid-template-columns:1.3fr repeat(4,1fr);border:1px solid rgba(255,255,255,.14);border-radius:22px;overflow:hidden}
+.stripe > div{padding:22px;border-right:1px solid rgba(255,255,255,.1);min-width:0}
+@media (max-width:400px){ .stripe .n{font-size:21px} .stripe > div{padding:18px 14px} }
+.stripe > div:last-child{border-right:0}
+.stripe h3{color:#fff;font-size:17px}
+.stripe p{margin:6px 0 0;font-size:14px;color:#B9C0DB;line-height:1.45}
+.stripe .n{font:800 28px/1 var(--display);color:#fff}
+@media (max-width:980px){ .stripe{grid-template-columns:1fr 1fr} .stripe > div:first-child{grid-column:1/-1;border-right:0;border-bottom:1px solid rgba(255,255,255,.1)} .stripe > div{border-bottom:1px solid rgba(255,255,255,.1)} }
+
+.review{margin-top:clamp(40px,6vw,64px);display:grid;grid-template-columns:auto 1fr;gap:20px 28px;align-items:start}
+.review .hand{font-size:120px;line-height:.6;color:var(--hl)}
+.review p{margin:0;font:500 clamp(19px,2.2vw,26px)/1.45 var(--body);color:#fff;max-width:48ch}
+.review cite{display:block;margin-top:14px;font-style:normal;font-size:14.5px;color:#9BA6CF}
+
+/* МЕТОД */
+.translator{background:var(--card);border:2px solid var(--ink);border-radius:22px;overflow:hidden}
+.tr-head{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:2px solid var(--ink);background:var(--paper-2)}
+.tr-head h3{font-size:18px}
+.tr-row{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;padding:16px 22px;border-bottom:1px dashed var(--line)}
+.tr-row:last-child{border-bottom:0}
+.tr-from{color:var(--ink-3);text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px;font-size:16px}
+.tr-to{font-weight:600;font-size:16.5px;transition:opacity .3s,transform .3s}
+.js .tr-to{opacity:0;transform:translateX(-8px)}
+.js .tr-row.on .tr-to{opacity:1;transform:none}
+.tr-row .flip{font:600 13px/1 var(--body);border:1.5px solid var(--ink);background:var(--card);color:var(--ink);border-radius:999px;padding:9px 12px;cursor:pointer;white-space:nowrap;min-height:38px}
+.tr-row.on .flip{background:var(--ink);color:#fff}
+@media (max-width:720px){
+  .tr-row{grid-template-columns:1fr;gap:8px}
+  .tr-row .flip{justify-self:start}
+  .js .tr-to{transform:none}
+}
+
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(36px,5vw,56px)}
+.pr{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;position:relative}
+.pr .no{font:700 34px/1 var(--hand);color:var(--red)}
+.pr h3{margin:8px 0 10px}
+.pr p{margin:0;font-size:15px;color:var(--ink-2)}
+.pr ul{margin:10px 0 0;padding-left:18px;font-size:14.5px;color:var(--ink-2)}
+.pr ul li{margin:3px 0}
+@media (max-width:1000px){ .principles{grid-template-columns:1fr 1fr} }
+@media (max-width:620px){ .principles{grid-template-columns:1fr} }
+
+/* мини-проект */
+.builder{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);margin-top:clamp(48px,7vw,80px);align-items:start}
+.builder > *{min-width:0}
+.builder form{display:grid;gap:14px}
+.field label{display:flex;gap:10px;align-items:baseline;font:600 15px/1.3 var(--body);margin-bottom:6px}
+.field label span{font:800 13px/1 var(--display);color:#fff;background:var(--ink);border-radius:6px;padding:5px 7px}
+.field small{display:block;color:var(--ink-3);font-size:13px;margin:-2px 0 6px}
+.field input,.field textarea{
+  width:100%;font:400 16px/1.45 var(--body);color:var(--ink);background:var(--card);
+  border:1.5px solid #CFC7B3;border-radius:12px;padding:12px 14px;resize:vertical;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(28,155,194,.25)}
+.builder-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.passport{
+  position:sticky;top:88px;background:var(--card);border-radius:6px;padding:34px 30px 30px 54px;
+  box-shadow:0 24px 50px -24px rgba(20,32,74,.4);
+  background-image:linear-gradient(90deg,transparent 38px,var(--red) 38px,var(--red) 40px,transparent 40px),repeating-linear-gradient(transparent 0 31px,#DCE6F2 31px 32px);
+  min-height:420px;
+}
+.passport .p-kicker{font:600 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.passport h3{margin:10px 0 18px;font-size:clamp(19px,2vw,24px);min-height:1.3em;overflow-wrap:anywhere}
+.passport dl{margin:0;display:grid;gap:12px}
+.passport dt{font:600 12.5px/1.2 var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.passport dd{margin:3px 0 0;font:500 17px/1.45 var(--body);white-space:pre-wrap;overflow-wrap:anywhere}
+.passport dd.empty,.passport h3.empty{color:#B7BCD0;font-weight:400}
+.passport .stamp{position:absolute;right:18px;bottom:16px;font:700 26px/1 var(--hand);color:var(--red);transform:rotate(-8deg);opacity:0;transition:opacity .3s}
+.passport.done .stamp{opacity:1}
+@media (max-width:900px){ .builder{grid-template-columns:1fr} .passport{position:relative;top:0;min-height:0} }
+
+/* ПЛОЩАДКИ */
+.filters{display:grid;gap:12px;margin-bottom:26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chips .lbl{font:600 13px/1 var(--body);color:var(--ink-3);min-width:88px}
+.chip{font:600 14px/1 var(--body);border:1.5px solid var(--ink);background:var(--card);color:var(--ink);border-radius:999px;padding:10px 14px;cursor:pointer;min-height:40px}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff}
+.arena-count{font-size:14px;color:var(--ink-2);margin:0 0 16px}
+.arenas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.arena{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px;transition:transform .15s, box-shadow .15s}
+.arena:hover{transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(20,32,74,.45)}
+.arena .meta{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:600 12px/1 var(--body);padding:6px 9px;border-radius:999px;background:var(--paper-2);color:var(--ink-2)}
+.pill.dl{background:var(--hl);color:var(--ink)}
+.arena h3{font-size:17px}
+.arena .org{font-size:13.5px;color:var(--ink-3);margin:-4px 0 0}
+.arena p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.arena a{margin-top:auto;font:600 14px/1 var(--body);color:var(--ink);text-decoration:none;padding-top:8px}
+.arena a:hover{color:var(--red)}
+.arena-empty{grid-column:1/-1;padding:30px;border:2px dashed var(--line);border-radius:18px;text-align:center;color:var(--ink-2)}
+@media (max-width:1000px){ .arenas{grid-template-columns:1fr 1fr} }
+@media (max-width:620px){ .arenas{grid-template-columns:1fr} .chips .lbl{min-width:100%} }
+
+/* ФОРМАТЫ */
+.formats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid var(--ink);border-radius:22px;overflow:hidden;background:var(--card)}
+.fmt{padding:28px 24px;border-right:1px dashed var(--line);display:flex;flex-direction:column;gap:12px}
+.fmt:last-child{border-right:0}
+.fmt .n{font:800 15px/1 var(--display);color:var(--red)}
+.fmt ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.fmt ul li{margin:4px 0}
+@media (max-width:1000px){ .formats{grid-template-columns:1fr 1fr} .fmt:nth-child(2){border-right:0} .fmt:nth-child(-n+2){border-bottom:1px dashed var(--line)} }
+@media (max-width:560px){ .formats{grid-template-columns:1fr} .fmt{border-right:0!important;border-bottom:1px dashed var(--line)} .fmt:last-child{border-bottom:0} }
+.cinderella{margin-top:26px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;background:var(--ink);color:#fff;border-radius:22px;padding:22px 26px}
+.cinderella p{margin:0;max-width:62ch;color:#D5DAEE}
+.cinderella b{color:#fff}
+.cinderella .hand{color:var(--hl);font-size:32px}
+
+/* ОБ АВТОРЕ */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,72px);align-items:center}
+.about figure{margin:0;position:relative;max-width:400px}
+.about figure img{border-radius:20px;aspect-ratio:385/655;object-fit:cover;width:100%;box-shadow:0 30px 60px -30px rgba(20,32,74,.5)}
+.about figure figcaption{position:absolute;left:-10px;bottom:24px;background:var(--hl);font:700 24px/1 var(--hand);padding:10px 14px;border-radius:8px;transform:rotate(-4deg)}
+.facts{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
+.facts li{display:grid;grid-template-columns:110px 1fr;gap:18px;padding-bottom:14px;border-bottom:1px dashed var(--line);align-items:baseline}
+.facts li:last-child{border-bottom:0}
+.facts b{font:800 20px/1.1 var(--display)}
+.facts span{color:var(--ink-2);font-size:15.5px}
+.creed{margin-top:26px;font:700 clamp(20px,2.4vw,26px)/1.3 var(--display)}
+.rubrics{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.rubrics a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 13px;border-radius:10px;background:var(--card);border:1px solid var(--line)}
+.rubrics a:hover{border-color:var(--ink)}
+@media (max-width:860px){ .about{grid-template-columns:1fr} .about figure{max-width:320px} .facts li{grid-template-columns:1fr;gap:4px} }
+
+/* ФИНАЛ */
+.final{text-align:center}
+.final h2{margin:0 auto;max-width:22ch}
+.final .lede{margin:22px auto 0}
+.final .hero-cta{justify-content:center}
+.footer{border-top:1px solid var(--line);padding-block:32px 44px;font-size:13.5px;color:var(--ink-3);position:relative;z-index:1}
+.footer p{margin:0 0 8px;max-width:92ch}
+
+/* появление при скролле (только при включённом JS) */
+.js .reveal{opacity:0;translate:0 18px;transition:opacity .7s ease, translate .7s ease}
+.js .reveal.in{opacity:1;translate:0 0}
+.js .hero .rise{opacity:0;transform:translateY(16px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.js .hero .rise:nth-child(2){animation-delay:.08s}
+.js .hero .rise:nth-child(3){animation-delay:.16s}
+.js .hero .rise:nth-child(4){animation-delay:.24s}
+.js .hero .rise:nth-child(5){animation-delay:.32s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-size:14.5px;opacity:0;transition:opacity .25s, transform .25s;z-index:10;pointer-events:none;max-width:calc(100vw - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .reveal{opacity:1;translate:none}
+  .js .hero .rise{opacity:1;transform:none}
+  .js .circled path{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Учимся <span>побеждать</span></a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#route">Маршрут</a>
+      <a href="#stories">Истории</a>
+      <a href="#method">Метод</a>
+      <a href="#arenas">Площадки</a>
+      <a href="#formats">Форматы</a>
+      <a href="#about">Обо мне</a>
+    </nav>
+    <a class="btn small" href="https://t.me/projekt_victory" target="_blank" rel="noopener">Канал</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker rise">Наставник по школьным проектам</div>
+        <h1 class="rise">От <span class="strike">«нам задали проект»</span><br>— до защиты, баллов и&nbsp;<span class="circled">первых побед<svg viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true"><path d="M20 58 C 18 22, 120 6, 200 12 C 270 17, 298 40, 284 66 C 268 94, 140 98, 70 88 C 24 80, 6 62, 30 40 C 44 28, 70 20, 96 16"/></svg></span></h1>
+        <p class="lede rise">Помогаю школьникам и родителям пройти путь спокойно: найти тему в том, что ребёнку уже интересно, собрать исследование, выйти на сцену — и положить результат в копилку будущего.</p>
+        <div class="hero-cta rise">
+          <a class="btn" href="https://t.me/projekt_victory" target="_blank" rel="noopener">Читать канал «Учимся побеждать» →</a>
+          <a class="btn ghost" href="#route">Как это устроено</a>
+        </div>
+        <p class="hero-note rise"><span class="hand" aria-hidden="true">!</span><span><b>Я не пишу проекты за детей.</b> Ребёнок делает свой проект сам, а я рядом: от выбора темы до уверенной защиты.</span></p>
+      </div>
+      <figure class="polaroid reveal">
+        <span class="tape" aria-hidden="true"></span>
+        <div class="sticker" aria-hidden="true"><div><b>3 из 3</b>на очную защиту</div></div>
+        <img src="img/maria.jpg" width="673" height="800" alt="Мария Громова, автор канала «Учимся побеждать»">
+        <figcaption>Мария Громова</figcaption>
+      </figure>
+    </div>
+
+    <div class="grades reveal" role="group" aria-label="Цифры из практики">
+      <div class="grade"><div class="num">14 <em>лет</em></div><p>в федеральном министерстве: поддержка семей с детьми, НКО, нацпроекты</p></div>
+      <div class="grade"><div class="num"><em>3</em> из 3</div><p>проектов подопечных прошли на очную защиту «Кода Менделеева»</p></div>
+      <div class="grade"><div class="num"><em>+5</em> баллов</div><p>к сумме ЕГЭ при поступлении — за проект, лежавший на полке с 10-го класса</p></div>
+      <div class="grade"><div class="num"><em>24</em> часа</div><p>с нуля до поданной заявки на грантовый конкурс Росмолодёжи</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ЗНАКОМО -->
+<section class="section" style="padding-top:clamp(24px,4vw,48px)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Знакомо?</div>
+      <h2>Проект приходит домой. Вместе с&nbsp;ним&nbsp;— хаос</h2>
+    </div>
+    <div class="pains">
+      <div class="pain reveal"><q>Нам задали сделать проект…</q><small>И начинается классика: вечера до ночи, суета и срочный поиск темы.</small></div>
+      <div class="pain reveal"><q>Алиса, помоги придумать тему!</q><small>«Яндекс, срочно найди что-нибудь про экосистемы!» — и работа пишется для галочки.</small></div>
+      <div class="pain reveal"><q>Что-то не так, но непонятно что</q><small>Ребёнок принёс идею, вы сели вместе за стол… а потом усталость, неуверенность и нехватка времени.</small></div>
+    </div>
+    <div class="answer reveal">
+      <span class="hand">А если так:</span>
+      <p>школьный проект — не наказание, а&nbsp;<span class="mark">шанс</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- МАРШРУТ -->
+<section class="section" id="route" style="padding-top:clamp(24px,4vw,56px)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Маршрут</div>
+      <h2>Много маленьких шагов вместо одного огромного «проекта к&nbsp;маю»</h2>
+      <p class="lede">Без перфекционизма. Входить в маршрут можно с любой точки и в своём темпе.</p>
+    </div>
+    <ol class="route reveal">
+      <li><div class="dot">01</div><h3>Раскопки</h3><p>Порыться в папках, презентациях «на пять минут» и рисунках. Материал часто уже лежит и ждёт своего часа.</p></li>
+      <li><div class="dot">02</div><h3>Тема по-человечески</h3><p>Не «исследование особенностей…», а «Почему наш кот всегда спит в одной коробке».</p></li>
+      <li><div class="dot">03</div><h3>Версия 1</h3><p>Кривая, но существующая. Её уже можно показать.</p></li>
+      <li><div class="dot">04</div><h3>Маленькая сцена</h3><p>Показать бабушке, семейному чату, учителю: «Скажите, что тут непонятно?»</p></li>
+      <li><div class="dot">05</div><h3>Площадка по силам</h3><p>Школа, регион или вся Россия. Выбираем площадку, где участие действительно что-то даст.</p></li>
+      <li><div class="dot">06</div><h3>Защита и копилка</h3><p>Диплом, портфолио, ГИР (госреестр талантов), дополнительные баллы при поступлении.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- КУДА ВЕДЁТ -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">#КудаЭтоВедёт</div>
+      <h2>Зачем всё это ребёнку через пять лет</h2>
+    </div>
+    <div class="leads">
+      <div class="lead reveal"><div class="big">до 10</div><h3>баллов к сумме ЕГЭ</h3><p>за индивидуальные достижения: победы и призовые места в олимпиадах, конкурсах, конференциях.</p></div>
+      <div class="lead reveal"><div class="big">ГИР</div><h3>госреестр талантов</h3><p>официальное подтверждение достижений и дополнительные возможности при поступлении и в конкурсах на стипендии и гранты.</p></div>
+      <div class="lead reveal"><div class="big">100</div><h3>баллов за экзамен</h3><p>или поступление без экзаменов — для победителей и призёров олимпиад из перечня, если вуз это разрешает.</p></div>
+      <div class="lead reveal"><div class="big">Вуз</div><h3>портфолио вместо резюме</h3><p>научная активность со школы потом работает на студенческие стипендии, гранты и стажировки.</p></div>
+    </div>
+    <p class="fine reveal">Правила начисления баллов каждый вуз устанавливает сам и меняет от года к году. Перед подачей проверяйте актуальные условия на сайте университета.</p>
+  </div>
+</section>
+
+<!-- ИСТОРИИ -->
+<section class="section dark" id="stories">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">#ИсторииПобедителей</div>
+      <h2 style="color:#fff">У&nbsp;каждого проекта свой путь</h2>
+      <p class="lede">Кто-то долго не верил в себя, кто-то пришёл с идеей, которая казалась «слишком простой». Имена и фотографии ребят здесь не публикуем, только путь проекта.</p>
+    </div>
+
+    <div class="stories">
+      <article class="story reveal">
+        <div class="result">+5 к ЕГЭ</div>
+        <div class="tag">11 класс · обществознание</div>
+        <h3>Игра, которая не ушла в корзину</h3>
+        <ol>
+          <li><b>Было</b><span>Интерактивная игра «Запоминай и побеждай», написанная в 10 классе — «на пятёрку и на полку». Первое сообщение ученицы: «В России куча гениев, шанс выиграть — маленький».</span></li>
+          <li><b>Сделали</b><span>Достали из архива, чуть доработали правила, опёрлись на опрос сверстников и упаковали под формат конкурса. Ничего не ломали.</span></li>
+          <li><b>Стало</b><span>Лауреат «Кода Менделеева», 5 дополнительных баллов к ЕГЭ и поступление в институт.</span></li>
+        </ol>
+        <blockquote>«Получается, проект был не просто для галочки — он реально пригодился и принёс пользу!» — из сообщения мамы</blockquote>
+      </article>
+
+      <article class="story reveal">
+        <div class="result">2-е место</div>
+        <div class="tag">5 класс · команда из двух · инженерия</div>
+        <h3>«Нам жарко или в классе душно?»</h3>
+        <ol>
+          <li><b>Было</b><span>После физкультуры в классе нечем дышать. Вопрос: это мы прибежали — или воздух действительно плохой?</span></li>
+          <li><b>Сделали</b><span>Изучили ГОСТы по температуре и CO₂, собрали макет класса из LEGO, подключили датчики на Arduino.</span></li>
+          <li><b>Стало</b><span>Победа на школьной конференции, 2-е место на «Сахаровских чтениях» — конференции для 8–11 классов, 3-е место на конференции им.&nbsp;Лобачевского в Казани, очная защита «Кода Менделеева» в 6-м классе.</span></li>
+        </ol>
+      </article>
+
+      <article class="story reveal">
+        <div class="result">очная защита</div>
+        <div class="tag">9 класс · инженерные науки</div>
+        <h3>Мост, который реанимировали за две сессии</h3>
+        <ol>
+          <li><b>Было</b><span>Проект моста через Татарский пролив, рассчитанного на землетрясение в 7–9 баллов, и «второе место» на школьной конференции. Запрос — реанимировать.</span></li>
+          <li><b>Сделали</b><span>Две онлайн-сессии: оживили название, уточнили предмет, объект и методы, усилили инженерную логику и расчёт экономического эффекта.</span></li>
+          <li><b>Стало</b><span>«Железнодорожный переход будущего: прочная связь Сахалина и континента» — на очной защите «Кода Менделеева».</span></li>
+        </ol>
+      </article>
+
+      <article class="story reveal">
+        <div class="result">23:55</div>
+        <div class="tag">14+ · грантовый конкурс Росмолодёжи</div>
+        <h3>Заявка за 24 часа</h3>
+        <ol>
+          <li><b>Было</b><span>«Маш, а не сложно будет сформировать проект с нуля для моей дочки?» На руках — только интересы и увлечения.</span></li>
+          <li><b>Сделали</b><span>Упаковали идею, записали и смонтировали видеовизитку, собрали презентацию, письма поддержки и даже коммерческие предложения.</span></li>
+          <li><b>Стало</b><span>Заявка ушла за пять минут до полуночи. А главное — у участницы готовый проект, который можно двигать на другие конкурсы.</span></li>
+        </ol>
+      </article>
+    </div>
+
+    <div class="stripe reveal">
+      <div><h3>«Старт в инновации», МФТИ</h3><p>Две команды подопечных дошли до регионального этапа. 30 апреля 2026 года — Демо-день.</p></div>
+      <div><div class="n">8&nbsp;000+</div><p>заявок на отборочный этап</p></div>
+      <div><div class="n">97</div><p>городов России и 10 стран</p></div>
+      <div><div class="n">1 балл</div><p>отделил один из проектов от финала</p></div>
+      <div><div class="n">Демо-день</div><p>проект SmartClass — перед партнёрами и инвесторами</p></div>
+    </div>
+
+    <div class="review reveal">
+      <span class="hand" aria-hidden="true">«</span>
+      <div>
+        <p>Сначала дочь совсем не хотела участвовать — ей это казалось скучным и непонятным. Но вы нашли к ней подход. Для меня как для мамы очень ценно видеть, как у ребёнка появляется интерес и вера в себя.</p>
+        <cite>Отзыв мамы ученицы из канала</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- МЕТОД -->
+<section class="section" id="method">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">#ПроектыБезИстерик</div>
+      <h2>Родитель&nbsp;— не мотиватор. Родитель&nbsp;— переводчик</h2>
+      <p class="lede">В «надо» ребёнок слышит только давление, а&nbsp;на «попробуем как эксперимент» откликается. Нажмите, чтобы перевести.</p>
+    </div>
+
+    <div class="translator reveal" id="translator">
+      <div class="tr-head">
+        <h3>Перевод с родительского на детский</h3>
+        <button class="btn small ghost" type="button" id="trAll">Перевести всё</button>
+      </div>
+      <div class="tr-row"><div class="tr-from">«Сядь, займись проектом»</div><button class="flip" type="button" aria-pressed="false">Перевести →</button><div class="tr-to">«Давай сделаем одну попытку на 15 минут. Просто попробуем».</div></div>
+      <div class="tr-row"><div class="tr-from">«Доделай до конца»</div><button class="flip" type="button" aria-pressed="false">Перевести →</button><div class="tr-to">«Сделай версию 1. Кривую, но существующую».</div></div>
+      <div class="tr-row"><div class="tr-from">«Ты опять бросаешь»</div><button class="flip" type="button" aria-pressed="false">Перевести →</button><div class="tr-to">«Что сейчас мешает: скучно, страшно или непонятно?»</div></div>
+      <div class="tr-row"><div class="tr-from">«Это несерьёзно»</div><button class="flip" type="button" aria-pressed="false">Перевести →</button><div class="tr-to">«Окей. А как сделать, чтобы это выглядело как серьёзный проект?»</div></div>
+      <div class="tr-row"><div class="tr-from">«Надо думать о будущем»</div><button class="flip" type="button" aria-pressed="false">Перевести →</button><div class="tr-to">«Кому это может быть полезно прямо сейчас? Хотя бы одному человеку».</div></div>
+    </div>
+
+    <div class="principles">
+      <div class="pr reveal"><div class="no">таймер</div><h3>15 минут лучше нуля</h3><p>Таймер на 15 минут и один микрошаг: три строчки — тема, цель, метод. Устали — закрываем со спокойной совестью.</p></div>
+      <div class="pr reveal"><div class="no">штаб</div><h3>Дом — это штаб</h3><p>Проект умирает не от лени, а от быта.</p><ul><li>2–3 раза в неделю по 20–30 минут</li><li>одно время и один угол</li><li>«сегодня делаем маленькое, но законченное»</li></ul></div>
+      <div class="pr reveal"><div class="no">сцена</div><h3>Проекту нужна сцена</h3><p>Показ важнее идеальности. Пять ступеней: один человек → семейный чат → вопрос учителю «где слабое место?» → мини-презентация дома «на чай» → конкурс.</p></div>
+      <div class="pr reveal"><div class="no">10 мин</div><h3>Один взрослый на 10 минут</h3><p>Разговор с человеком из профессии улучшает проект быстрее ещё одного вечера за презентацией. Три вопроса: что самое слабое, что улучшить за неделю, как понять, что проект настоящий.</p></div>
+      <div class="pr reveal"><div class="no">папка</div><h3>Победа недели</h3><p>Один артефакт за неделю: слайд, таблица наблюдений, видео на 30 секунд. «Мы много думали» не считается. Папка побед и 7 минут в воскресенье — и через месяц виден маршрут.</p></div>
+      <div class="pr reveal"><div class="no">клад</div><h3>Археология проектов</h3><p>Рефераты, презентации «для урока и забыли», поделки, заметки в телефоне, темы, о которых ребёнок может говорить часами. Зачатки проектов почти всегда уже есть дома.</p></div>
+    </div>
+
+    <!-- мини-проект за 4 вопроса -->
+    <div class="builder" id="builder">
+      <div class="reveal">
+        <div class="sec-head" style="margin-bottom:24px">
+          <div class="kicker">Попробуйте сейчас</div>
+          <h2 style="font-size:clamp(24px,3vw,36px)">Мини-проект за 4 человеческих вопроса</h2>
+          <p class="lede" style="font-size:16px">Без ГОСТов и «актуальностей». Ответьте вместе с ребёнком — и рядом соберётся черновик проекта. Ничего никуда не отправляется, текст остаётся у вас.</p>
+        </div>
+        <form id="bForm" autocomplete="off" novalidate>
+          <div class="field"><label for="bTitle"><span>0</span>Человеческое название</label><input id="bTitle" maxlength="120" placeholder="Почему наш кот всегда спит в одной коробке"></div>
+          <div class="field"><label for="bQ1"><span>1</span>Про что?</label><small>Кот, растение, игра, привычки одноклассников, цены в магазине…</small><textarea id="bQ1" rows="2" maxlength="400"></textarea></div>
+          <div class="field"><label for="bQ2"><span>2</span>Что мы сделали или делаем?</label><small>Наблюдали, спрашивали, мерили, строили, пробовали, сравнивали</small><textarea id="bQ2" rows="2" maxlength="400"></textarea></div>
+          <div class="field"><label for="bQ3"><span>3</span>Что заметили?</label><small>Цифры, разницу, странность: «думали одно — вышло другое»</small><textarea id="bQ3" rows="2" maxlength="400"></textarea></div>
+          <div class="field"><label for="bQ4"><span>4</span>И что из этого следует?</label><small>«Теперь мы понимаем, что…» / «В следующий раз хотим проверить…»</small><textarea id="bQ4" rows="2" maxlength="400"></textarea></div>
+          <div class="builder-actions">
+            <button class="btn small" type="button" id="bCopy">Скопировать текст</button>
+            <button class="btn small ghost" type="button" id="bExample">Заполнить примером</button>
+            <button class="btn small ghost" type="reset" id="bReset">Очистить</button>
+          </div>
+        </form>
+      </div>
+      <div class="passport reveal" id="passport">
+        <div class="p-kicker">Паспорт проекта · версия 1</div>
+        <h3 id="pTitle" class="empty">Название появится здесь</h3>
+        <dl>
+          <div><dt>Про что</dt><dd id="pQ1" class="empty">—</dd></div>
+          <div><dt>Что делали</dt><dd id="pQ2" class="empty">—</dd></div>
+          <div><dt>Что заметили</dt><dd id="pQ3" class="empty">—</dd></div>
+          <div><dt>Что из этого следует</dt><dd id="pQ4" class="empty">—</dd></div>
+        </dl>
+        <div class="stamp" aria-hidden="true">Это уже проект!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПЛОЩАДКИ -->
+<section class="section" id="arenas" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">#ШагиСейчас</div>
+      <h2>Куда нести проект: карта площадок</h2>
+      <p class="lede">Конкурсы, конференции и олимпиады, которые разбирались в канале. Выберите класс и направление — у каждой площадки есть подробный разбор.</p>
+    </div>
+    <div class="filters">
+      <div class="chips" id="fGrade" role="group" aria-labelledby="fGradeLbl"><span class="lbl" id="fGradeLbl">Класс</span>
+        <button class="chip" type="button" data-v="all" aria-pressed="true">Все</button>
+        <button class="chip" type="button" data-v="1-4" aria-pressed="false">1–4</button>
+        <button class="chip" type="button" data-v="5-7" aria-pressed="false">5–7</button>
+        <button class="chip" type="button" data-v="8-11" aria-pressed="false">8–11</button>
+      </div>
+      <div class="chips" id="fDir" role="group" aria-labelledby="fDirLbl"><span class="lbl" id="fDirLbl">Направление</span>
+        <button class="chip" type="button" data-v="all" aria-pressed="true">Все</button>
+        <button class="chip" type="button" data-v="science" aria-pressed="false">Наука и инженерия</button>
+        <button class="chip" type="button" data-v="it" aria-pressed="false">IT</button>
+        <button class="chip" type="button" data-v="hum" aria-pressed="false">Гуманитарные науки</button>
+        <button class="chip" type="button" data-v="media" aria-pressed="false">Видео</button>
+      </div>
+    </div>
+    <p class="arena-count" id="arenaCount" aria-live="polite"></p>
+    <div class="arenas" id="arenaList">
+      <noscript><div class="arena-empty">Карта площадок работает с включённым JavaScript. Все разборы — в <a href="https://t.me/s/projekt_victory?q=%23ШагиСейчас">канале по тегу #ШагиСейчас</a>.</div></noscript>
+    </div>
+    <p class="fine">Условия, возраст и сроки меняются от сезона к сезону. Даты указаны только для текущего приёма; для остальных площадок сверяйтесь с положением.</p>
+  </div>
+</section>
+
+<!-- ФОРМАТЫ -->
+<section class="section" id="formats">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">#Наставничество</div>
+      <h2>Как можно работать вместе</h2>
+    </div>
+    <div class="formats reveal">
+      <div class="fmt"><div class="n">01</div><h3>Вводная консультация</h3><ul><li>разобраться, чего школа на самом деле ждёт от «проектной деятельности»</li><li>выбрать уровень: школа, регион или вся Россия</li><li>наметить тему и структуру</li></ul></div>
+      <div class="fmt"><div class="n">02</div><h3>От идеи до готового проекта</h3><ul><li>выбор темы</li><li>проработка исследования</li><li>текст, презентация и логика защиты</li><li>куда подавать работу дальше</li></ul></div>
+      <div class="fmt"><div class="n">03</div><h3>Доработка готового проекта</h3><ul><li>адаптация под конкретный конкурс</li><li>логика, аргументация, оформление</li><li>правки презентации и стенда</li></ul></div>
+      <div class="fmt"><div class="n">04</div><h3>Подготовка к очной защите</h3><ul><li>структура выступления</li><li>ответы на вопросы жюри</li><li>репетиция «как на защите»</li></ul></div>
+    </div>
+    <div class="cinderella reveal">
+      <p><span class="hand">Сдавать завтра?</span><br>Для таких случаев есть тариф <b>«Ночная Золушка»</b> — он же двойной. Но к конкурсам и грантам лучше подходить заранее.</p>
+      <a class="btn" style="background:var(--hl);color:var(--ink);border-color:var(--hl);box-shadow:4px 4px 0 var(--red)" href="https://t.me/projekt_victory" target="_blank" rel="noopener">Написать через канал →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ОБ АВТОРЕ -->
+<section class="section" id="about" style="padding-top:0">
+  <div class="wrap about">
+    <figure class="reveal">
+      <img src="img/maria-forum.jpg" width="385" height="655" alt="Мария Громова на X Санкт-Петербургском международном форуме труда" loading="lazy">
+      <figcaption>Форум труда, СПб</figcaption>
+    </figure>
+    <div class="reveal">
+      <div class="kicker">Обо мне</div>
+      <h2 style="margin-top:18px">Мария Громова</h2>
+      <p class="lede" style="margin-top:18px">Опыт госпроектов я перенесла в школьные: чтобы проект приняли и учителя, и эксперты, и вузы, и государственные системы поддержки талантов.</p>
+      <ul class="facts">
+        <li><b>14 лет</b><span>в федеральном министерстве: поддержка семей с детьми, развитие НКО, нацпроекты и госпрограммы</span></li>
+        <li><b>6+ лет</b><span>в консалтинге: помогала регионам и муниципалитетам выстраивать проекты и принимать решения</span></li>
+        <li><b>МФТИ</b><span>повышение квалификации по ФГОС и школьным проектам</span></li>
+        <li><b>Сцены</b><span>X Санкт-Петербургский международный форум труда; форум «Запусти карьеру» в «Синергии» с темой «Проектное портфолио вместо резюме»</span></li>
+      </ul>
+      <p class="creed">Спокойно, по-честному и&nbsp;с&nbsp;верой в&nbsp;ребёнка.</p>
+      <div class="rubrics" role="group" aria-label="Рубрики канала">
+        <a href="https://t.me/s/projekt_victory?q=%23%D0%9A%D1%83%D0%B4%D0%B0%D0%AD%D1%82%D0%BE%D0%92%D0%B5%D0%B4%D1%91%D1%82" target="_blank" rel="noopener">#КудаЭтоВедёт</a>
+        <a href="https://t.me/s/projekt_victory?q=%23%D0%A8%D0%B0%D0%B3%D0%B8%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81" target="_blank" rel="noopener">#ШагиСейчас</a>
+        <a href="https://t.me/s/projekt_victory?q=%23%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9" target="_blank" rel="noopener">#ИсторииПобедителей</a>
+        <a href="https://t.me/s/projekt_victory?q=%23%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%D0%91%D0%B5%D0%B7%D0%98%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%BA" target="_blank" rel="noopener">#ПроектыБезИстерик</a>
+        <a href="https://t.me/s/projekt_victory?q=%23%D0%9D%D0%B0%D1%81%D1%82%D0%B0%D0%B2%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE" target="_blank" rel="noopener">#Наставничество</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФИНАЛ -->
+<section class="section final" style="padding-top:0">
+  <div class="wrap reveal">
+    <span class="hand" style="font-size:40px;display:block;margin-bottom:12px">Учимся побеждать вместе!</span>
+    <h2>Работа ребёнка — в копилку будущего, а&nbsp;не&nbsp;в&nbsp;корзину</h2>
+    <p class="lede">Конкурсы с разборами, истории ребят и поддержка для родителей — в Telegram-канале.</p>
+    <div class="hero-cta">
+      <a class="btn" href="https://t.me/projekt_victory" target="_blank" rel="noopener">Открыть канал →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Собрана по материалам публичного Telegram-канала «Учимся побеждать» (t.me/projekt_victory). Не является публичной офертой: запись, оплата и приём заявок на этой странице не ведутся.</p>
+    <p>Тексты и фотографии принадлежат автору канала. Фотографии и имена детей намеренно не публикуются. Форма «Мини-проект» работает только в вашем браузере и никуда не отправляет данные.</p>
+    <p>Условия конкурсов и правила начисления баллов меняются — сверяйтесь с положением площадки и сайтом вуза.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(s,r){return (r||document).querySelector(s)};
+  var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+
+  /* появление при скролле */
+  var revs = $$('.reveal');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    revs.forEach(function(el){ io.observe(el); });
+  } else { revs.forEach(function(el){ el.classList.add('in'); }); }
+
+  /* тост */
+  var toastT;
+  function toast(msg){
+    var t = $('#toast'); t.textContent = msg; t.classList.add('show');
+    clearTimeout(toastT); toastT = setTimeout(function(){ t.classList.remove('show'); }, 2400);
+  }
+
+  /* переводчик */
+  function setRow(row,on){
+    row.classList.toggle('on',on);
+    var b = $('.flip',row); b.setAttribute('aria-pressed', on ? 'true':'false');
+    b.textContent = on ? 'Переведено ✓' : 'Перевести →';
+  }
+  $$('#translator .tr-row').forEach(function(row){
+    $('.flip',row).addEventListener('click',function(){ setRow(row,!row.classList.contains('on')); syncAll(); });
+  });
+  var trAll = $('#trAll');
+  function syncAll(){
+    var rows = $$('#translator .tr-row'), allOn = rows.every(function(r){return r.classList.contains('on')});
+    trAll.textContent = allOn ? 'Вернуть как было' : 'Перевести всё';
+  }
+  trAll.addEventListener('click',function(){
+    var rows = $$('#translator .tr-row'), allOn = rows.every(function(r){return r.classList.contains('on')});
+    rows.forEach(function(r){ setRow(r,!allOn); }); syncAll();
+  });
+
+  /* мини-проект за 4 вопроса */
+  var map = [['bTitle','pTitle','Название появится здесь'],['bQ1','pQ1','—'],['bQ2','pQ2','—'],['bQ3','pQ3','—'],['bQ4','pQ4','—']];
+  function render(){
+    var filled = 0;
+    map.forEach(function(m){
+      var v = $('#'+m[0]).value.trim(), out = $('#'+m[1]);
+      out.textContent = v || m[2];
+      out.classList.toggle('empty', !v);
+      if (v) filled++;
+    });
+    $('#passport').classList.toggle('done', filled === map.length);
+  }
+  map.forEach(function(m){ $('#'+m[0]).addEventListener('input',render); });
+  $('#bForm').addEventListener('reset',function(){ setTimeout(render,0); });
+  $('#bForm').addEventListener('submit',function(e){ e.preventDefault(); });
+  $('#bExample').addEventListener('click',function(){
+    var ex = ['Почему наш кот всегда спит в одной коробке',
+      'Про нашего кота и его любимое место для сна.',
+      'Две недели наблюдали и записывали, где кот спит утром и вечером. Ставили рядом вторую коробку другого размера.',
+      'Кот выбирает старую коробку, даже когда рядом новая, — думали, что ему важен размер, а оказалось — запах и место у батареи.',
+      'Похоже, для кота важнее знакомый запах и тепло. В следующий раз хотим проверить, что будет, если переставить коробку в другую комнату.'];
+    map.forEach(function(m,i){ $('#'+m[0]).value = ex[i]; });
+    render();
+  });
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext){
+      return navigator.clipboard.writeText(text).catch(function(){ return legacyCopy(text); });
+    }
+    return legacyCopy(text);
+  }
+  function legacyCopy(text){
+    return new Promise(function(res,rej){
+      var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly','');
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy') ? res() : rej(); } catch(e){ rej(e); }
+      document.body.removeChild(ta);
+    });
+  }
+  $('#bCopy').addEventListener('click',function(){
+    var v = map.map(function(m){ return $('#'+m[0]).value.trim(); });
+    if (!v.some(Boolean)){ toast('Сначала ответьте хотя бы на один вопрос'); $('#bTitle').focus(); return; }
+    var text = (v[0] ? v[0] : 'Мой мини-проект') + '\n\n' +
+      'Про что: ' + (v[1]||'—') + '\n' +
+      'Что делали: ' + (v[2]||'—') + '\n' +
+      'Что заметили: ' + (v[3]||'—') + '\n' +
+      'Что из этого следует: ' + (v[4]||'—');
+    copyText(text).then(function(){ toast('Текст скопирован'); }, function(){ toast('Не получилось скопировать — выделите текст вручную'); });
+  });
+  render();
+
+  /* карта площадок */
+  var ARENAS = [
+    {n:'«Код Менделеева»', org:'РАН при поддержке Минобрнауки', cls:'5–11 класс, 11–18 лет', g:['5-7','8-11'], d:'science', gives:'Ценят честность исследования и личный вклад ребёнка. Победа или призовое место — дополнительные баллы к ЕГЭ.', dl:'заявки до 1 октября 2026', post:154},
+    {n:'Челлендж «Россия в науке»', org:'портал «Россия в науке»', cls:'7–22 года, команда до 5', g:['1-4','5-7','8-11'], d:'media', gives:'До пяти роликов, каждый до 2 минут, о памятной дате или выдающемся учёном. Дипломы и публикация лучших работ.', dl:'работы до 30 сентября 2026', post:159},
+    {n:'«Старт в инновации»', org:'МФТИ', cls:'7–11 класс', g:['5-7','8-11'], d:'science', gives:'Работы оценивают учёные МФТИ, финалисты выходят на Демо-день к инвесторам. Лучшие получают финансирование и менторов.', post:31},
+    {n:'«Большие вызовы»', org:'«Сириус»', cls:'7–11 класс, СПО 1–2 курс', g:['5-7','8-11'], d:'science', gives:'До 10 дополнительных баллов к ЕГЭ, включение в ГИР, экспертиза проекта от специалистов.', post:135},
+    {n:'«Высший пилотаж»', org:'НИУ ВШЭ', cls:'8–11 класс', g:['8-11'], d:'science', gives:'Взрослая экспертная оценка проекта или исследования. От 2 до 10 баллов к ЕГЭ — в зависимости от статуса и правил приёма в конкретном году.', post:60},
+    {n:'«Молодые исследователи»', org:'НИУ ВШЭ — Санкт-Петербург', cls:'8–11 класс', g:['8-11'], d:'hum', gives:'Большая сцена для гуманитариев: история, краеведение, литература, общество, медиа.', post:63},
+    {n:'«Сахаровские чтения»', org:'международная конференция школьников, СПб', cls:'8–11 класс; 5–7 — по допуску', g:['5-7','8-11'], d:'science', gives:'Акцент на исследовании, оргвзноса нет. Сильные работы 5–7 классов официально допускают.', post:146},
+    {n:'«Лобачевский. Прорыв»', org:'Казанский федеральный университет', cls:'с 4 класса', g:['1-4','5-7','8-11'], d:'science', gives:'Защита перед экспертами КФУ, рецензия на работу, возможность попасть в ГИР.', post:134},
+    {n:'«Инженеры будущего»', org:'Москва, МГПУ', cls:'7–11 класс', g:['5-7','8-11'], d:'it', gives:'22 технологические секции — от ИИ до VR и умного города. Призёров вносят в ГИР.', post:136},
+    {n:'«Кубок Яндекс Образования»', org:'Яндекс Лицей и Яндекс Учебник', cls:'5–7 и 8–11 класс', g:['5-7','8-11'], d:'it', gives:'Мягкий вход в информатику: задания на логику и алгоритмы, Blockly и Python. Регистрирует учитель.', post:48},
+    {n:'«Поиск-НИТ»', org:'городской конкурс, только Москва', cls:'1–11 класс', g:['1-4','5-7','8-11'], d:'it', gives:'IT-проекты от мультипликации до роботов и веба. Данные призёров — в МЭШ и ГИР.', post:64},
+    {n:'«Знаешь? Научи!»', org:'АНО «Национальные приоритеты»', cls:'1–11 класс', g:['1-4','5-7','8-11'], d:'media', gives:'Видео на 1–3 минуты: объяснить научную идею так, чтобы понял человек «вообще не в теме».', post:59},
+    {n:'«Звёздная эстафета»', org:'конкурс по космонавтике', cls:'6–18 лет, команда до 3', g:['1-4','5-7','8-11'], d:'science', gives:'Космос через науку, творчество и инженерию. Финалистам — защита и экскурсия в РКК «Энергия».', post:138},
+    {n:'«PRO-туризм»', org:'международный конкурс', cls:'от 7 лет, команда до 5', g:['1-4','5-7','8-11'], d:'hum', gives:'Свой туристический маршрут: 35 номинаций, от исторических квестов до гастрономии.', post:132}
+  ];
+  var DIR = {science:'Наука и инженерия', it:'IT', hum:'Гуманитарные науки', media:'Видео'};
+  var state = {g:'all', d:'all'};
+  var list = $('#arenaList'), count = $('#arenaCount');
+
+  function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text!=null) e.textContent = text; return e; }
+  function plural(n){ var a=n%10,b=n%100; if(a===1&&b!==11) return 'площадка'; if(a>=2&&a<=4&&(b<12||b>14)) return 'площадки'; return 'площадок'; }
+
+  function renderArenas(){
+    list.textContent = '';
+    var items = ARENAS.filter(function(a){
+      return (state.g==='all' || a.g.indexOf(state.g)!==-1) && (state.d==='all' || a.d===state.d);
+    });
+    count.textContent = items.length ? 'Нашлось: ' + items.length + ' ' + plural(items.length) : '';
+    if (!items.length){
+      var empty = el('div','arena-empty');
+      empty.appendChild(document.createTextNode('Под такой фильтр в разборах пока ничего нет. Загляните в '));
+      var a = el('a',null,'канал по тегу #ШагиСейчас'); a.href='https://t.me/s/projekt_victory?q=%23%D0%A8%D0%B0%D0%B3%D0%B8%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81'; a.target='_blank'; a.rel='noopener';
+      empty.appendChild(a); empty.appendChild(document.createTextNode(' — там есть разборы и других площадок.'));
+      list.appendChild(empty); return;
+    }
+    items.forEach(function(a){
+      var card = el('article','arena');
+      var meta = el('div','meta');
+      meta.appendChild(el('span','pill',a.cls));
+      meta.appendChild(el('span','pill',DIR[a.d]));
+      if (a.dl) meta.appendChild(el('span','pill dl',a.dl));
+      card.appendChild(meta);
+      card.appendChild(el('h3',null,a.n));
+      card.appendChild(el('p','org',a.org));
+      card.appendChild(el('p',null,a.gives));
+      var link = el('a',null,'Разбор в канале →');
+      link.href = 'https://t.me/projekt_victory/' + a.post; link.target = '_blank'; link.rel = 'noopener';
+      card.appendChild(link);
+      list.appendChild(card);
+    });
+  }
+  function bindChips(id,key){
+    var box = $('#'+id);
+    $$('.chip',box).forEach(function(ch){
+      ch.addEventListener('click',function(){
+        $$('.chip',box).forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+        ch.setAttribute('aria-pressed','true'); state[key] = ch.getAttribute('data-v'); renderArenas();
+      });
+    });
+  }
+  bindChips('fGrade','g'); bindChips('fDir','d');
+  renderArenas();
+})();
+</script>
+</body>
+</html>
